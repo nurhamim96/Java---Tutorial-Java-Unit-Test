@@ -1,6 +1,7 @@
 package com.tutorial.test;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assumptions.*;
 
 import com.tutorial.test.generator.SimpleDisplayNameGenerator;
 import org.junit.jupiter.api.*;
@@ -63,6 +64,7 @@ public class CalculatorTest {
 
     }
 
+    // membatalkan test secara manual
     @Test
     public void testAborted() {
         var profile = System.getenv("PROFILE");
@@ -72,6 +74,14 @@ public class CalculatorTest {
         }
 
         // dan silahkan tambahkan unit test jika dia DEV dibawah ini
+    }
+
+    // membatalkan test secara otomatis
+    @Test
+    public void testAssumtions() {
+        assumeTrue("DEV".equals(System.getenv("PROFILE")));
+
+
     }
 }
 
@@ -86,4 +96,5 @@ public class CalculatorTest {
 *  Gunakan @AfterAll jika ingin menjalankan perintah sekali sebelum test
 *  @BeforeAll dan @AfterAll hanya bisa dijalankan pada method static
 *  Gunakan exception TestAbortedException() untuk membatalkan test secara manual.
+*  Gunakan Assumtions untuk membatalkan test secara otomatis.
 */
