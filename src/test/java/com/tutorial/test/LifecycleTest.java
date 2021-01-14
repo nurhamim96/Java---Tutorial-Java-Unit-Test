@@ -19,5 +19,6 @@ public class LifecycleTest {
 }
 
 /*
-* Di unit tes lifecycle nya independent antar method.
+NOTE :
+* Di unit tes lifecycle nya independent antar method dalam artian object unit test akan selalu dibuat baru per method unit test.
 * */
