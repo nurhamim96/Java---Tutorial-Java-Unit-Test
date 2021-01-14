@@ -10,7 +10,7 @@ mvn test
 
 ### Configuration Tag in Intellij Idea
 
-![Tag](img/Tag%20Configuration%20in%20Intellij%20Idea.png "Sign Up Page")
+![Tag](img/tag_config.png "Sign Up Page")
 
 __Run Grouping Test With Tags__
 ```
