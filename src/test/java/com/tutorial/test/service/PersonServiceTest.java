@@ -45,4 +45,20 @@ public class PersonServiceTest {
         Assertions.assertEquals("ibad", person.getId());
         Assertions.assertEquals("Ibad Nurhamim", person.getName());
     }
+
+    @Test
+    void testRegisterSuccess() {
+        var person = personService.register("Ibad");
+        Assertions.assertNotNull(person);
+        Assertions.assertEquals("Ibad", person.getName());
+        Assertions.assertNotNull(person.getId());
+
+        Mockito.verify(personRepository, Mockito.times(1))
+                .insert(new Person(person.getId(), "Ibad"));
+    }
 }
+
+/*
+* NOTE :
+* Setiap melakukan Mocking Object disarankan selalu melakukan verifikasi
+* */

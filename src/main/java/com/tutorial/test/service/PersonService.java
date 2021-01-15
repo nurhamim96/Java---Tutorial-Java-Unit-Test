@@ -3,6 +3,8 @@ package com.tutorial.test.service;
 import com.tutorial.test.data.Person;
 import com.tutorial.test.repository.PersonRepository;
 
+import java.util.UUID;
+
 public class PersonService {
 
     private PersonRepository personRepository;
@@ -18,5 +20,11 @@ public class PersonService {
         } else {
             throw new IllegalArgumentException("Person not found");
         }
+    }
+
+    public Person register(String name) {
+        var person = new Person(UUID.randomUUID().toString(), name);
+        personRepository.insert(person);
+        return person;
     }
 }
